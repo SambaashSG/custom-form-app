@@ -25,7 +25,7 @@ class Migration(migrations.Migration):
                 ('voucher_code', models.CharField(max_length=14, verbose_name=b'Fav Flick',
                                                     error_messages={b'required': 'Type in your voucher code',
                                                                     b'invalid': "Voucher code is not correct"})),
-                ('user', models.OneToOneField(null=True, to=settings.AUTH_USER_MODEL)),
+                ('user', models.OneToOneField(null=True, to=settings.AUTH_USER_MODEL, on_delete=models.CASCADE)),
             ],
         ),
     ]
