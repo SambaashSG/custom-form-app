@@ -12,8 +12,8 @@ class ExtraInfoForm(ModelForm):
             "invalid": u"Pre-employment card number is not correct",
         }
         self.fields['mobile_phone_number'].error_messages = {
-            "required": u"Type in your mobile number",
-            "invalid": u"Mobile number is not correct",
+            "required": u"Type in your mobile phone number",
+            "invalid": u"Mobile phone number is not correct",
         }
         self.fields['voucher_code'].error_messages = {
             "required": u"Type in your voucher code",

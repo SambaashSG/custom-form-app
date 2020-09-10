@@ -19,11 +19,7 @@ class ExtraInfo(models.Model):
         max_length=50,
     )
 
-    phone_regex = RegexValidator(regex=r'^\+?1?\d{9,12}$',
-                                 message="Phone number must be entered in the format: '+999999999'. Up to 15 digits allowed.")
     mobile_phone_number = models.CharField(
-        validators=[phone_regex],
-        blank=True,
         verbose_name="Mobile phone number",
         max_length=15,
     )
