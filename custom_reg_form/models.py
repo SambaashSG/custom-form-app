@@ -1,6 +1,6 @@
 from django.conf import settings
 from django.db import models
-
+from django.core.validators import RegexValidator
 # Backwards compatible settings.AUTH_USER_MODEL
 USER_MODEL = getattr(settings, 'AUTH_USER_MODEL', 'auth.User')
 
@@ -12,14 +12,20 @@ class ExtraInfo(models.Model):
     """
     user = models.OneToOneField(USER_MODEL, null=True, on_delete=models.CASCADE)
 
+
+
     pre_employment_card_no = models.CharField(
         verbose_name="Pre-employment Card No",
         max_length=50,
     )
 
-    mobile_phone_number = models.PositiveIntegerField(
+    phone_regex = RegexValidator(regex=r'^\+?1?\d{9,12}$',
+                                 message="Phone number must be entered in the format: '+999999999'. Up to 15 digits allowed.")
+    mobile_phone_number = models.CharField(
+        validators=[phone_regex],
+        blank=True,
         verbose_name="Mobile phone number",
-        max_length=12,
+        max_length=15,
     )
 
     voucher_code = models.CharField(
