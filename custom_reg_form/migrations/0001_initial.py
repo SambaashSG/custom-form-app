@@ -19,7 +19,7 @@ class Migration(migrations.Migration):
                 ('pre_employment_card_no', models.CharField(max_length=50, verbose_name=b'Pre-employment Card No',
                                                     error_messages={b'required': 'Type in your pre-employment card number.',
                                                                     b'invalid': "Pre-employment card number is not correct"})),
-                ('mobile_phone_number', models.InCharField(max_length=15, verbose_name=b'Mobile phone number',
+                ('mobile_phone_number', models.CharField(max_length=15, verbose_name=b'Mobile phone number',
                                                     error_messages={b'required': 'Type in your mobile number',
                                                                     b'invalid': "Mobile number is not correct"})),
                 ('voucher_code', models.CharField(max_length=14, verbose_name=b'Voucher Code',
